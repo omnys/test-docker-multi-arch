@@ -13,7 +13,7 @@ RUN apk add curl && curl -L ${QEMU_URL} | tar zxvf - -C . --strip-components 1
 FROM arm64v8/openjdk:8-slim
 
 # Add QEMU
-COPY --from=builder qemu-aarch64-static /usr/bin
+COPY --from=builder /tmp/qemu-aarch64-static /usr/bin
 
 # Define working directory.
 WORKDIR /opt/mule
