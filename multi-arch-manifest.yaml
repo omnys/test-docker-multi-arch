@@ -1,0 +1,11 @@
+image: omnys/test-docker-multi-arch:latest
+manifests:
+  - image: omnys/test-docker-multi-arch:amd64
+    platform:
+      architecture: amd64
+      os: linux
+  - image: omnys/test-docker-multi-arch:arm64v8
+    platform:
+      architecture: arm64
+      os: linux
+      variant: v8
