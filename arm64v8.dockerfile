@@ -11,8 +11,8 @@ FROM arm64v8/openjdk:8-slim
 WORKDIR /opt/mule
 
 COPY --from=builder /tmp/mule-standalone-4.2.1 .
-RUN useradd -m mule && \
-  chown -R mule /opt/mule
+RUN /usr/sbin/useradd -m mule && \
+  /bin/chown -R mule /opt/mule
 
 USER mule
 
